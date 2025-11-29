@@ -2,7 +2,7 @@ import { Injectable, NotFoundException, OnModuleInit } from '@nestjs/common';
 import { CreatePlatformFeeDto } from './dto/create-platform-fee.dto';
 import { UpdatePlatformFeeDto } from './dto/update-platform-fee.dto';
 import { InjectRepository } from '@nestjs/typeorm';
-import { PlatformFee } from './entities/platform-fee.entity';
+import { PlatformFee, TierName } from './entities/platform-fee.entity';
 import { Repository } from 'typeorm';
 
 @Injectable()
@@ -19,6 +19,9 @@ export class PlatformFeeService implements OnModuleInit {
     if (count === 0) {
       const platformFee = new PlatformFee();
       platformFee.platform_fee_percentage = 5;
+      platformFee.tier_name = TierName.STANDARD;
+      platformFee.min_value = 10;
+      platformFee.max_value = 100;
       await this.platformFeeRepository.save(platformFee);
     }
    }
