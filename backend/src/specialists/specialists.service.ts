@@ -167,10 +167,7 @@ async findAll(
   // Filter by specialists if provided
   
 
-  // If userId is passed (from auth), filter by that user
-  if (userId) {
-    where.user_id = userId;
-  }
+  
 
   const [items, total] = await this.serviceOfferingRepository.findAndCount({
     relations: ['specialist', 'specialist.media', 'user'],

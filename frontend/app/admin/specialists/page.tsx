@@ -1,8 +1,12 @@
 import ServicePage from "@/components/Specialist/ServicePage";
-import React from "react";
+import React, { Suspense } from "react";
 
 const page = () => {
-  return <ServicePage />;
+  return (
+    <Suspense>
+      <ServicePage />{" "}
+    </Suspense>
+  );
 };
 
 export default page;
