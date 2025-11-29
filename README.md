@@ -1,4 +1,4 @@
-# ANYMORE
+# ANYCOMP
 
 A full-stack application built with Next.js (frontend) and NestJS (backend) featuring authentication, role management, validation, and full TypeScript support.
 
