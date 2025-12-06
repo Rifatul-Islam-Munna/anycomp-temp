@@ -149,13 +149,14 @@ async findAll(
 
   // Filter by is_draft if provided
   if (typeof is_draft === 'boolean') {
-    where.is_draft = is_draft;
+    where.specialist = { is_draft: is_draft };
   }
 
   // Filter by is_published if provided
   if (typeof is_published === 'boolean') {
     if (is_published) {
-      where.is_draft = false;
+    
+       where.specialist = { is_draft: false };
     }
   }
 

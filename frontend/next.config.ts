@@ -5,6 +5,16 @@ const nextConfig: NextConfig = {
   typescript: {
     ignoreBuildErrors: true,
   },
+  images:{
+    remotePatterns: [
+         {
+        protocol: "https",
+        hostname: "familyalbum-backend-for-post.6ybj83.easypanel.host",
+        port: "",
+        pathname: "/**",
+      },
+    ]
+  }
 };
 
 export default nextConfig;
